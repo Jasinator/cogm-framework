@@ -1,0 +1,146 @@
+COGM Quadrant Visualization
+============================
+
+2D Task Ontology: TPN/DMN × Outcome/Process
+
+
+                         OUTCOME-FOCUSED (+Y)
+                                 ↑
+                                 |
+                                 |
+    ┌────────────────────────────┼────────────────────────────┐
+    │                            │                            │
+    │   ANALYTICAL EXECUTION     │   NARRATIVE ENGAGEMENT     │
+    │                            │                            │
+    │   • Document parsing       │   • Persuasive synthesis   │
+    │   • Diagnostics            │   • Scenario planning      │
+    │   • Data extraction        │   • Storytelling           │
+    │                            │                            │
+    │   GPU: 90%  SNN: 10%       │   GPU: 20%  SNN: 80%       │
+    │   ⚡ High throughput       │   🧠 Associative patterns  │
+    │                            │                            │
+TPN │                            │                            │ DMN
+────┼────────────────────────────┼────────────────────────────┼────
+    │            (-X)            │            (+X)            │
+    │                            │                            │
+    │   STRUCTURED REFINEMENT    │   CREATIVE SYNTHESIS       │
+    │                            │                            │
+    │   • Data optimization      │   • Ideation               │
+    │   • Hypothesis testing     │   • Thematic exploration   │
+    │   • Iterative debugging    │   • Brainstorming          │
+    │                            │                            │
+    │   GPU: 80%  SNN: 20%       │   GPU: 30%  SNN: 70%       │
+    │   🔧 Precise computation   │   💡 Emergent thinking     │
+    │                            │                            │
+    └────────────────────────────┼────────────────────────────┘
+                                 |
+                                 ↓
+                         PROCESS-FOCUSED (-Y)
+
+
+KEY:
+====
+
+X-AXIS: Task-Positive Network (TPN) ←→ Default Mode Network (DMN)
+- Left (-X):  Analytical, structured, deterministic processing
+- Right (+X): Reflective, associative, emergent processing
+
+Y-AXIS: Outcome vs Process Orientation
+- Top (+Y):   Outcome-focused (clear deliverables, external validation)
+- Bottom (-Y): Process-focused (iterative refinement, internal coherence)
+
+HARDWARE MAPPING:
+=================
+
+GPU (Transformer):
+- High-throughput matrix operations
+- Batch processing
+- Precision-optimized
+- Dense computation
+
+SNN (Loihi 2):
+- Event-driven processing
+- Sparse activation (0.05-3%)
+- Low idle power
+- Adaptive timing
+
+CLASSIFICATION EXAMPLE:
+=======================
+
+Prompt: "Parse this JSON file and extract email addresses"
+
+Step 1: Generate embedding → [0.23, -0.41, 0.15, ...]
+Step 2: Project onto axes
+   X-axis (TPN/DMN): -0.67 → Analytical (TPN)
+   Y-axis (Outcome/Process): +0.45 → Outcome-focused
+Step 3: Determine quadrant → Analytical Execution (top-left)
+Step 4: Allocate resources → 90% GPU, 10% SNN
+
+
+ROUTING DECISION TREE:
+======================
+
+Is task analytical (structured, deterministic)?
+│
+├─ YES (TPN-dominant)
+│  │
+│  ├─ Clear deliverable? → Analytical Execution (90/10)
+│  └─ Iterative process? → Structured Refinement (80/20)
+│
+└─ NO (DMN-dominant, reflective)
+   │
+   ├─ Clear deliverable? → Narrative Engagement (20/80)
+   └─ Iterative process? → Creative Synthesis (30/70)
+
+
+PROJECTED PERFORMANCE:
+======================
+
+                    │ GPU-Only │ Static  │  COGM   │
+                    │ Baseline │  50/50  │ Routing │
+────────────────────┼──────────┼─────────┼─────────┤
+Latency (ms)        │   18.2   │  12.5   │  5.85   │ -68%
+Coherence (ROUGE-L) │   0.85   │  0.82   │  0.94   │ +11%
+Power (mW)          │   950    │  800    │  12.5   │ -99%
+────────────────────┴──────────┴─────────┴─────────┘
+
+Note: Simulation projections with ±20-30% variance
+
+
+IMPLEMENTATION NOTES:
+=====================
+
+1. Axis vectors learned from labeled training data (N > 10K prompts)
+2. Soft boundaries allow gradual transitions near quadrant borders
+3. MARL fine-tunes splits based on runtime metrics
+4. Fallback: Static lookup if MARL training insufficient
+
+
+VALIDATION REQUIREMENTS:
+=========================
+
+✓ Loihi 2 hardware access (Intel INRC program)
+✓ Diverse prompt corpus (Alpaca, MMLU, domain-specific)
+✓ GPU cluster for baseline comparisons
+✓ Multi-language testing
+✓ Edge case analysis (ambiguous prompts)
+
+
+OPEN QUESTIONS:
+===============
+
+? How to convert attention mechanisms to spikes?
+? Optimal neuron allocation per quadrant?
+? Cross-quadrant boundary handling?
+? Security implications of routing metadata?
+? Scaling to 1M+ requests/day?
+
+
+FOR MORE INFORMATION:
+=====================
+
+Paper: cogm_paper.pdf
+Code:  cogm_classifier.py
+Repo:  https://github.com/jasinator/cogm-framework
+
+Contact: jason.ader@outlook.com
